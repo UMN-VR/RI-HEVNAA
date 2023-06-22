@@ -1,5 +1,7 @@
 # RI-HEVNAA
- Real-time Interrupt-driven Hemispheric Emulated von Neumann Agent Architecture
+
+## Real-time Interrupt-driven Hemispheric Emulated von Neumann Agent Architecture
+ 
 The architecture we've designed, the Real-time Interrupt-driven Hemispheric Emulated von Neumann Agent Architecture (RI-HEVNAA), is a novel approach to building a chatbot that mirrors the structure and functions of the human brain. It has three main SuperUnits (SUs): the Agent SuperUnit (A_SU), the Left Hemisphere SuperUnit (LH_SU), and the Right Hemisphere SuperUnit (RH_SU). Each of these SuperUnits has an Agent Central Processing Unit (A-CPU) inspired by the von Neumann architecture and a suite of Accelerators. The A-CPU has a Control Unit, a Memory Unit, and an Execution Unit.
 
 1. The A_SU serves as the high-level manager of the chatbot system. It consists of five Accelerators:
