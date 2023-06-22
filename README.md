@@ -14,7 +14,6 @@ Each SU incorporates an A-CPU, inspired by the von Neumann architecture, compris
 
 The A_SU, the high-level manager of the chatbot system, houses five Accelerators and the Bus manager:
 
-    - Internal IO Accelerator: Facilitates communication with other SUs via the Agent Bus and Interhemispheric Bus.
     - System Parameter Regulator Accelerator (SPR_A): Manages low-complexity signals across the system.
     - State Control Accelerator (SC_A): Oversees the overall system state.
     - Lifecycle Manager Accelerator (LM_A): Supervises lifecycle events, such as sleep schedules.
