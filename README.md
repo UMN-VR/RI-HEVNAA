@@ -4,6 +4,7 @@
 
 External Resources:
 https://github.com/spcl/graph-of-thoughts
+[Code Llama: Open Foundation Models for Code](https://arxiv.org/abs/2308.12950)
 
 RI-HEVNAA (Real-time Interrupt-driven Hemispheric Emulated von Neumann Agent Architecture) is an advanced chatbot architecture designed to replicate the structure and functionality of the human brain. Inspired by principles of biomimicry and von Neumann's computational model, RI-HEVNAA offers a comprehensive framework for building sophisticated and human-like chatbot systems. This repository serves as the development platform for the RI-HEVNAA architecture, providing in-depth documentation, examples, and speculation on its functionalities.
 ![image](952raf8B.svg)
