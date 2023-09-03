@@ -104,7 +104,6 @@ The RI-HEVNAA architecture incorporates the following SuperUnits:
 
 3. **Right Hemisphere SuperUnit (RH_SU):** The RH_SU emulates the right hemisphere and is dedicated to tasks involving spatial and visual processing. It includes the Sensory Processing Accelerator (SP_A) and the Visual and Spatial Processing Accelerator (VSP_A).
 
-4. **Motor, Inertial, and Spatial Coordination Accelerator SuperUnit (MISC_A):** The MISC_A interfaces with hardware components such as servos, LiDAR modules, and Inertial Measurement Units (IMUs). It coordinates movements and spatial orientation based on inputs from other SuperUnits.
 
 ### Agent Central Processing Unit (A-CPU)
 
