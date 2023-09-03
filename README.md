@@ -237,3 +237,7 @@ We would like to express our gratitude to the open-source community for their co
 Please note that the RI-HEVNAA
 
  architecture described in this README is fictional and serves as a reference for understanding the concepts and components of an advanced chatbot architecture.
+
+
+### ⚠ Parts of this repo were made by GoldyChat through ChatGPT4 ⚠
+use with caution 
