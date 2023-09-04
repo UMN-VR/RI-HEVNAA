@@ -21,7 +21,7 @@ def setup_logger(process_name):
     logger = logging.getLogger(process_name)
     logger.setLevel(logging.INFO)
     
-    fh = logging.FileHandler(f"{process_name}.log")
+    fh = logging.FileHandler(f"logs/{process_name}.log")
     fh.setLevel(logging.INFO)
     
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -32,6 +32,12 @@ def setup_logger(process_name):
 
 def run_coroutine_in_new_process(coroutine_func, *args, **kwargs):
     process_name = coroutine_func.__name__
+    
+    # Clear previous handlers
+    for handler in logging.root.handlers[:]:
+        logging.root.removeHandler(handler)
+    
+    # Setup logger for this process
     logger = setup_logger(process_name)
     
     loop = asyncio.new_event_loop()
@@ -45,6 +51,8 @@ def run_coroutine_in_new_process(coroutine_func, *args, **kwargs):
     else:
         logger.error(f"Function {coroutine_func.__name__} did not return a coroutine.")
         raise TypeError("Not a coroutine")
+
+
 
 # def run_coroutine_in_new_process(coroutine_func, *args, **kwargs):
 #     loop = asyncio.new_event_loop()

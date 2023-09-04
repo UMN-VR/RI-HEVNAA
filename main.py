@@ -11,8 +11,23 @@ from RIHEVNAA import RIHEVNAA
 async def main():
     print("@main: Starting RI-HEVNAA System")
 
-    ri_hevnaa = RIHEVNAA()
+    delete_logs = True
+
+    if delete_logs:
+        # Delete all logs
+        print("@main: Deleting logs")
+        for file in os.listdir("logs"):
+            os.remove(f"logs/{file}")
     
+    # make sure logs folder exists
+    if not os.path.exists("logs"):
+        os.makedirs("logs")
+    
+
+    # Init RI-HEVNAA
+
+    ri_hevnaa = RIHEVNAA()
+
     await ri_hevnaa.execute()
 
     print("@main: Stopping RI-HEVNAA System")

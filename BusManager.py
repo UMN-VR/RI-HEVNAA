@@ -17,11 +17,11 @@ class BusManager:
         logger = logging.getLogger('BusManager')
         logger.setLevel(logging.DEBUG)
         # create file handler which logs even debug messages
-        fh = logging.FileHandler('BusManager.log')
+        fh = logging.FileHandler('logs/BusManager.log')
         fh.setLevel(logging.DEBUG)
         # create console handler with a higher log level
         ch = logging.StreamHandler()
-        ch.setLevel(logging.DEBUG)
+        ch.setLevel(logging.ERROR)
         # create formatter and add it to the handlers
         formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
         fh.setFormatter(formatter)
@@ -30,7 +30,6 @@ class BusManager:
         logger.addHandler(fh)
         logger.addHandler(ch)
         
-
 
         while(self.execute_enabled):
             await self.run(logger)
