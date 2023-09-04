@@ -3,17 +3,17 @@ import sys
 import os
 import time
 import numpy as np
+from HCPU import HCPU
+from Accelerators import Accelerators
 
-#name would be A_CPU, R_CPU or L_CPU
+
 class Unit:
-    def __init__(self, name, bus_manager):
+    def __init__(self, name, bus_manager, accelerators):
         print(f"@Unit.init: Starting {name}")
         self.name = name
 
-        # load JSON files with accelerator information in {name}/accelerators folder
-        self.accelerators = Accelerators(self.name)
-        self.accelerators.load_accelerators(f"{self.name}/accelerators")
-        self.accelerators.init_accelerators()
+        # link accelerators from Accelerators.py
+        self.accelerators = accelerators.link_accelerators(self.name)
 
         # Initialize Hemisphere Central Processing Unit
         self.unit_HCPU = HCPU(self.name, self.accelerators, bus_manager)

@@ -3,6 +3,9 @@ import sys
 import os
 import time
 import numpy as np
+from HCPU_Sub_Components.MemoryUnit import MemoryUnit
+from HCPU_Sub_Components.ControlUnit import ControlUnit
+from HCPU_Sub_Components.ExecutionUnit import ExecutionUnit
 
 # Hemisphere Central Processing Unit, a Von Neumann Architecture inspired program that acts like a high level CPU. Takes in 'name' argument
 class HCPU:
@@ -30,20 +33,21 @@ class HCPU:
     async def execute(self):
         print("@A_CPU.execute: Start")
         while(self.execute_enabled):
-            self.run()
+            await self.run()
         print("@A_CPU.execute: Done")
     
     async def run(self):
 
         print(f"@A_CPU.run: {self.name} Running")
 
-        # Run Accelerators
-        self.accelerators.run_accelerators()
-
         # Run Control Unit
-        self.control_unit.run_control_unit()
+        self.control_unit.run()
 
         # Run Execution Unit
-        self.execution_unit.run_execution_unit()
+        self.execution_unit.run()
+
+        # Run Memory Unit
+        self.memory_unit.run()
 
         print(f"@A_CPU.run: {self.name} Done")
+
