@@ -9,9 +9,14 @@ from RIHEVNAA import RIHEVNAA
 
 # Main function
 async def main():
-    print("@main: Starting RI-HEVNAA System")
+    
+    #Get working directory
+    working_dir = os.getcwd()
 
     delete_logs = True
+
+    print("@main: Starting RI-HEVNAA System  with dir: {working_dir}")
+
 
     if delete_logs:
         # Delete all logs
