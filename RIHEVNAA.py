@@ -12,6 +12,7 @@ import multiprocessing
 from Accelerators import Accelerators
 from concurrent.futures import ThreadPoolExecutor
 from multiprocessing import Process
+import traceback
 
 
 def setup_logger(process_name):
@@ -90,7 +91,7 @@ class RIHEVNAA:
 
         for name, coroutine in zip(process_names, process_coroutines):
             try:
-                print(f"@RIHEVNAA.execute: Creating process for {name}")
+                print(f"Creating process for {name}")
                 p = Process(target=run_coroutine_in_new_process, args=(coroutine,))
                 p.name = name
                 processes.append(p)
@@ -100,14 +101,14 @@ class RIHEVNAA:
         # Start processes
         for p in processes:
             try:
-                print(f"@RIHEVNAA.execute: Attempting to start process {p.name}")
+                print(f"Attempting to start process {p.name}")
                 p.start()
-                print(f"@RIHEVNAA.execute: Starting process {p.name}, pid: {p.pid}, daemon: {p.daemon}, alive: {p.is_alive()}, exitcode: {p.exitcode}")
+                print(f"pid: {p.pid}, daemon: {p.daemon}, alive: {p.is_alive()}, exitcode: {p.exitcode}")
             except Exception as e:
                 print(f"Failed to start process {p.name}: {e} {e.with_traceback}")
+                traceback.print_tb(e.__traceback__)
                 print(f"Cause: {e.__cause__}")
                 print(f"Context: {e.__context__}")
-                print(f"Traceback: {e.__traceback__}")
                 print(f"Type: {e.__class__}")
                 print(f"Args: {e.args}")
                 print(f"Doc: {e.__doc__}")
