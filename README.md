@@ -1,5 +1,7 @@
 # RI-HEVNAA: Real-time Interrupt-driven Hemispheric Emulated von Neumann Agent Architecture
 
+[https://colab.research.google.com/github/UMN-VR/RI-HEVNAA/blob/main/Notebook.ipynb](https://colab.research.google.com/github/UMN-VR/RI-HEVNAA/blob/main/Notebook.ipynb)
+
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 External Resources:
