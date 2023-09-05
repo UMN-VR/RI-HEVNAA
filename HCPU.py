@@ -1,3 +1,4 @@
+#HCPU.py
 import asyncio
 import sys
 import os
@@ -32,12 +33,10 @@ class HCPU:
         # Init Accelerators
         self.accelerators = accelerators
 
-        print(f"@{self.name}.init: Done")
-
-    def init_logger(self):
+        print(f"@{self.name}.init_logger:")
         #Create logger
-        logger = logging.getLogger(f'{self.name}')
-        logger.setLevel(logging.DEBUG)
+        self.logger = logging.getLogger(f'{self.name}')
+        self.logger.setLevel(logging.DEBUG)
         # create file handler which logs even debug messages
         fh = logging.FileHandler(f'logs/{self.name}.log')
         fh.setLevel(logging.DEBUG)
@@ -49,26 +48,26 @@ class HCPU:
         fh.setFormatter(formatter)
         ch.setFormatter(formatter)
         # add the handlers to logger
-        logger.addHandler(fh)
-        logger.addHandler(ch)
-        return logger
+        self.logger.addHandler(fh)
+        self.logger.addHandler(ch)
+
+        print(f"@{self.name}.init: Done")
 
     
     async def execute(self):
         print(f"@{self.name}.execute:")
-        logger = self.init_logger()
 
-        logger.info(f"@{self.name}.execute:")
+        self.logger.info(f"@{self.name}.execute:")
 
         while(self.execute_enabled):
-            await self.run(logger)
+            await self.run(self.logger)
        
-        logger.info(f"@{self.name}.execute: Done")
+        self.logger.info(f"@{self.name}.execute: Done")
     
-    async def run(self, logger):
+    async def run(self):
 
         #print(f"@A_CPU.run: {self.name} Running")
-        logger.info(f"@{self.name}.run:")
+        self.logger.info(f"@{self.name}.run:")
 
         # # Run Control Unit
         # instruction, program, memory = await self.control_unit.run(logger, self.RAM, self.accelerators)
@@ -80,14 +79,14 @@ class HCPU:
         # self.RAM = await self.memory_unit.run(logger, program, memory, result)
 
         # Run Control Unit
-        instruction, program, memory = await self.control_unit.run(logger, self.RAM, self.accelerators)
+        self.control_unit.run(self.logger)
 
         # Run Execution Unit
-        result = await self.execution_unit.run(logger, instruction, program, memory)
+        self.execution_unit.run(self.logger)
 
         # Run Memory Unit
-        self.RAM = await self.memory_unit.run(logger,instruction, program, memory, result)
+        self.memory_unit.run(self.logger)
 
         #print(f"@A_CPU.run: {self.name} Done")
-        logger.info(f"@{self.name}.run: Done")
+        self.logger.info(f"@{self.name}.run: Done")
 

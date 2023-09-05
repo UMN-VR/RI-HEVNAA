@@ -6,6 +6,13 @@ import os
 import time
 import numpy as np
 from RIHEVNAA import RIHEVNAA
+import argparse
+
+parser = argparse.ArgumentParser(description='RI-HEVNAA')
+parser.add_argument('--dir',
+                    help='Working directory of RI-HEVNAA',
+                    default=os.getcwd())
+
 
 # Main function
 async def main():
@@ -15,7 +22,7 @@ async def main():
 
     delete_logs = True
 
-    print("@main: Starting RI-HEVNAA System  with dir: {working_dir}")
+    print(f"@main: Starting RI-HEVNAA System  with dir: {working_dir}")
 
 
     if delete_logs:
@@ -39,4 +46,6 @@ async def main():
 
 #If File is main.py run main
 if __name__ == "__main__":
+    args = parser.parse_args()
+    os.chdir(args.dir)
     asyncio.run(main())

@@ -25,8 +25,8 @@ class ControlUnit:
         # The pathway's ID is used as the key
         self.pathways[pathway.pathway_id] = pathway
 
-    #def run(self, logger):
-    def run(self, logger, RAM, Accelerators):
+    def run(self, logger):
+    #def run(self, logger, RAM, Accelerators):
         logger.info(f"@{self.name}.run")
 
         #Check the Task Queue for new tasks

@@ -1,3 +1,4 @@
+#RIHEVNAA.py
 import asyncio
 import sys
 import os
@@ -82,25 +83,39 @@ class RIHEVNAA:
     # Start RI-HEVNAA execution, this will start all components and create 3 separate threads for each hemisphere
     async def execute(self):
         print("@RIHEVNAA.execute: Starting RI-HEVNAA Execution")
-
         # Create processes
-
         processes = []
-        processes.append(Process(target=run_coroutine_in_new_process, args=(self.bus_manager.execute,)))
-        processes.append(Process(target=run_coroutine_in_new_process, args=(self.web_monitoring_process.execute,)))
-        processes.append(Process(target=run_coroutine_in_new_process, args=(self.accelerators.execute,)))
-        processes.append(Process(target=run_coroutine_in_new_process, args=(self.agent_unit.execute,)))
-        processes.append(Process(target=run_coroutine_in_new_process, args=(self.right_unit.execute,)))
-        processes.append(Process(target=run_coroutine_in_new_process, args=(self.left_unit.execute,)))
+        process_names = ["bus_manager", "web_monitoring_process", "accelerators", "agent_unit", "right_unit", "left_unit"]
+        process_coroutines = [self.bus_manager.execute, self.web_monitoring_process.execute, self.accelerators.execute, self.agent_unit.execute, self.right_unit.execute, self.left_unit.execute]
+
+        for name, coroutine in zip(process_names, process_coroutines):
+            try:
+                print(f"@RIHEVNAA.execute: Creating process for {name}")
+                p = Process(target=run_coroutine_in_new_process, args=(coroutine,))
+                p.name = name
+                processes.append(p)
+            except Exception as e:
+                print(f"Failed to create process for {name}: {e}")
 
         # Start processes
         for p in processes:
-            p.start()
-            print(f"@RIHEVNAA.execute: Starting process {p.name}, pid: {p.pid}, daemon: {p.daemon}, alive: {p.is_alive()}, exitcode: {p.exitcode}")
-        
+            try:
+                print(f"@RIHEVNAA.execute: Attempting to start process {p.name}")
+                p.start()
+                print(f"@RIHEVNAA.execute: Starting process {p.name}, pid: {p.pid}, daemon: {p.daemon}, alive: {p.is_alive()}, exitcode: {p.exitcode}")
+            except Exception as e:
+                print(f"Failed to start process {p.name}: {e} {e.with_traceback}")
+                print(f"Cause: {e.__cause__}")
+                print(f"Context: {e.__context__}")
+                print(f"Traceback: {e.__traceback__}")
+                print(f"Type: {e.__class__}")
+                print(f"Args: {e.args}")
+                print(f"Doc: {e.__doc__}")
+
+
         # Wait for processes to finish
         for p in processes:
             p.join()
 
-
         print("@RIHEVNAA.execute: Done")
+
