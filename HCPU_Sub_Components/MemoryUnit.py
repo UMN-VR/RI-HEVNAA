@@ -8,6 +8,11 @@ class MemoryUnit:
     def __init__(self, name):
         self.name = name+"-MemoryUnit"
     
-    def run(self):
-        print(f"@{self.name}.run_memory_unit: Running Memory Unit")
-        print(f"@{self.name}.run_memory_unit: Done")
+    #def run(self, logger):
+    def run(self, logger, instruction, program, memory, result):
+        logger.info(f"@{self.name}.run")
+        
+        # 1s delay
+        time.sleep(1)
+        
+        logger.info(f"@{self.name}.run: Done")
