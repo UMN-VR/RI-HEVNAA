@@ -8,7 +8,7 @@ import logging
 
 class BusManager:
     def __init__(self):
-        print("@BusManager: Initializing Bus Manager")
+        print("@BusManager.init:")
         self.execute_enabled = True 
 
     async def execute(self):

@@ -7,7 +7,7 @@ import logging
 
 class WebMonitoringProcess:
     def __init__(self):
-        print("@WebMonitoringProcess: Initializing Web Monitoring Process")
+        print("@WebMonitoringProcess.init:")
         self.execute_enabled = True 
 
     async def execute(self):

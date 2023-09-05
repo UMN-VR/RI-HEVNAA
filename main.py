@@ -27,7 +27,7 @@ async def main():
 
     if delete_logs:
         # Delete all logs
-        print("@main: Deleting logs")
+        print("Deleting logs")
         for file in os.listdir("logs"):
             os.remove(f"logs/{file}")
     
@@ -42,6 +42,8 @@ async def main():
 
     await ri_hevnaa.execute()
 
+
+    # print exit message
     print("@main: Stopping RI-HEVNAA System")
 
 #If File is main.py run main

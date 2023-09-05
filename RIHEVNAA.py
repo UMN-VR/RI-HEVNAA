@@ -54,7 +54,7 @@ def run_coroutine_in_new_process(coroutine_func, *args, **kwargs):
 class RIHEVNAA:
 
     def __init__(self):
-        print("@RIHEVNAA: Initializing RI-HEVNAA Components")
+        print("\n@RIHEVNAA.init:\n")
 
         # Initialize components
 
@@ -63,11 +63,10 @@ class RIHEVNAA:
         self.bus_manager = BusManager()
         self.web_monitoring_process = WebMonitoringProcess()
         self.accelerators = Accelerators()
-
-        # Initialize Accelerators
-        self.accelerators.load_accelerators("accelerators")
+        print("@RIHEVNAA.init: DONE: Init Components")
         
         # Initialize Interhemispheric Units
+        print("Initializing Interhemispheric Units")
 
         # Initialize Agent Hemisphere Unit
         self.agent_unit = Unit("A_HCPU", self.bus_manager, self.accelerators)
@@ -83,7 +82,9 @@ class RIHEVNAA:
 
     # Start RI-HEVNAA execution, this will start all components and create 3 separate threads for each hemisphere
     async def execute(self):
-        print("@RIHEVNAA.execute: Starting RI-HEVNAA Execution")
+
+        startup_success = True
+        print("\n@RIHEVNAA.execute: Starting RI-HEVNAA Execution\n")
         # Create processes
         processes = []
         process_names = ["bus_manager", "web_monitoring_process", "accelerators", "agent_unit", "right_unit", "left_unit"]
@@ -96,6 +97,7 @@ class RIHEVNAA:
                 p.name = name
                 processes.append(p)
             except Exception as e:
+                startup_success = False
                 print(f"Failed to create process for {name}: {e}")
 
         # Start processes
@@ -105,6 +107,7 @@ class RIHEVNAA:
                 p.start()
                 print(f"pid: {p.pid}, daemon: {p.daemon}, alive: {p.is_alive()}, exitcode: {p.exitcode}")
             except Exception as e:
+                startup_success = False
                 print(f"Failed to start process {p.name}: {e} {e.with_traceback}")
                 traceback.print_tb(e.__traceback__)
                 print(f"Cause: {e.__cause__}")
@@ -113,6 +116,11 @@ class RIHEVNAA:
                 print(f"Args: {e.args}")
                 print(f"Doc: {e.__doc__}")
 
+        if not startup_success:
+            print("@RIHEVNAA.execute: ⚠️WARNING⚠️ Failed to start all processes, exiting")
+            return
+        elif startup_success:
+            print("\n@RIHEVNAA.execute: All processes started successfully, starting execution\n")
 
         # Wait for processes to finish
         for p in processes:

@@ -1,0 +1,46 @@
+2023-09-05 17:28:15,547 - INFO - @R_HCPU.execute: Starting run #1 at 1693952895.547031
+2023-09-05 17:28:15,547 - INFO - ControlUnit state before run: idle
+2023-09-05 17:28:15,547 - INFO - @R_HCPU.run:
+2023-09-05 17:28:15,547 - INFO - @R_HCPU-ControlUnit.run
+2023-09-05 17:28:16,552 - INFO - @R_HCPU-ControlUnit.run: Done
+2023-09-05 17:28:16,552 - INFO - Instruction: None
+2023-09-05 17:28:16,552 - INFO - Program: None
+2023-09-05 17:28:16,552 - INFO - Memory: None
+2023-09-05 17:28:16,552 - INFO - @R_HCPU-ExecutionUnit.run
+2023-09-05 17:28:17,555 - INFO - @R_HCPU-ExecutionUnit.run: Done
+2023-09-05 17:28:17,556 - INFO - Result: None
+2023-09-05 17:28:17,556 - INFO - @R_HCPU-MemoryUnit.run
+2023-09-05 17:28:18,560 - INFO - @R_HCPU-MemoryUnit.run: Done
+2023-09-05 17:28:18,560 - INFO - RAM: None
+2023-09-05 17:28:18,560 - INFO - @R_HCPU.run: Done
+2023-09-05 17:28:18,560 - INFO - @R_HCPU.execute: Ending run #1 at 1693952898.560516
+2023-09-05 17:28:18,560 - INFO - Cycle Duration: 3.0134851932525635
+2023-09-05 17:28:18,560 - INFO - @R_HCPU.execute: Starting run #2 at 1693952898.560694
+2023-09-05 17:28:18,560 - INFO - ControlUnit state before run: idle
+2023-09-05 17:28:18,560 - INFO - @R_HCPU.run:
+2023-09-05 17:28:18,560 - INFO - @R_HCPU-ControlUnit.run
+2023-09-05 17:28:19,564 - INFO - @R_HCPU-ControlUnit.run: Done
+2023-09-05 17:28:19,565 - INFO - Instruction: None
+2023-09-05 17:28:19,565 - INFO - Program: None
+2023-09-05 17:28:19,565 - INFO - Memory: None
+2023-09-05 17:28:19,565 - INFO - @R_HCPU-ExecutionUnit.run
+2023-09-05 17:28:20,570 - INFO - @R_HCPU-ExecutionUnit.run: Done
+2023-09-05 17:28:20,570 - INFO - Result: None
+2023-09-05 17:28:20,570 - INFO - @R_HCPU-MemoryUnit.run
+2023-09-05 17:28:21,571 - INFO - @R_HCPU-MemoryUnit.run: Done
+2023-09-05 17:28:21,571 - INFO - RAM: None
+2023-09-05 17:28:21,571 - INFO - @R_HCPU.run: Done
+2023-09-05 17:28:21,571 - INFO - @R_HCPU.execute: Ending run #2 at 1693952901.5716858
+2023-09-05 17:28:21,571 - INFO - Cycle Duration: 3.0109918117523193
+2023-09-05 17:28:21,571 - INFO - @R_HCPU.execute: Starting run #3 at 1693952901.57183
+2023-09-05 17:28:21,571 - INFO - ControlUnit state before run: idle
+2023-09-05 17:28:21,571 - INFO - @R_HCPU.run:
+2023-09-05 17:28:21,572 - INFO - @R_HCPU-ControlUnit.run
+2023-09-05 17:28:22,572 - INFO - @R_HCPU-ControlUnit.run: Done
+2023-09-05 17:28:22,572 - INFO - Instruction: None
+2023-09-05 17:28:22,572 - INFO - Program: None
+2023-09-05 17:28:22,572 - INFO - Memory: None
+2023-09-05 17:28:22,573 - INFO - @R_HCPU-ExecutionUnit.run
+2023-09-05 17:28:23,577 - INFO - @R_HCPU-ExecutionUnit.run: Done
+2023-09-05 17:28:23,577 - INFO - Result: None
+2023-09-05 17:28:23,577 - INFO - @R_HCPU-MemoryUnit.run

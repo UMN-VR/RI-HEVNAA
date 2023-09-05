@@ -1,0 +1,27 @@
+{
+    "pathway_id": "5x hello_world",
+    "description": "This is a test pathway that prints 5x 'hello_world's to the console using a loop and the re-try mechanism.", 
+    "tasks": [
+      "programs/print_string.py"
+    ],
+    "input_parameters": {
+        "param1": { "type": "string", "name":"string", "value": "hello world" },
+        "param2": { "type": "string", "name":"retry", "value": "yes" }
+    },
+    "output_parameters": {
+        "result1": { "type": "string" , "name": "result" }
+    },
+    "dependencies": [
+      "dependency_1",
+      "dependency_2"
+    ],
+    "state": "idle",
+    "error_handling": "retry",
+    "retry_logic": {
+      "max_retries": 5,
+      "delay": 5
+    },
+    "timeout": 60,
+    "priority": 1
+  }
+  
