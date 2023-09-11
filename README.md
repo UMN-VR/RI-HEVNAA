@@ -21,7 +21,7 @@ RI-HEVNAA (Real-time Interrupt-driven Hemispheric Emulated von Neumann Agent Arc
   - [SuperUnits](#superunits)
   - [Agent Central Processing Unit (A-CPU)](#agent-central-processing-unit-a-cpu)
   - [Accelerators](#accelerators)
-  - [Pathways and Tasks Paradigm](#pathways-and-tasks-paradigm)
+  - [Pathways and Tasks Paradigm](#chains-and-tasks-paradigm)
 - [Data Flow and Activation](#data-flow-and-activation)
 - [Python and JSON Integration](#python-and-json-integration)
 - [Optimization Techniques](#optimization-techniques)

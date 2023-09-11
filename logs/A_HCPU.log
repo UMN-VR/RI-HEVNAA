@@ -1,46 +1,38 @@
-2023-09-05 17:28:15,547 - INFO - @A_HCPU.execute: Starting run #1 at 1693952895.547007
-2023-09-05 17:28:15,547 - INFO - ControlUnit state before run: idle
-2023-09-05 17:28:15,547 - INFO - @A_HCPU.run:
-2023-09-05 17:28:15,547 - INFO - @A_HCPU-ControlUnit.run
-2023-09-05 17:28:16,552 - INFO - @A_HCPU-ControlUnit.run: Done
-2023-09-05 17:28:16,552 - INFO - Instruction: None
-2023-09-05 17:28:16,552 - INFO - Program: None
-2023-09-05 17:28:16,552 - INFO - Memory: None
-2023-09-05 17:28:16,552 - INFO - @A_HCPU-ExecutionUnit.run
-2023-09-05 17:28:17,555 - INFO - @A_HCPU-ExecutionUnit.run: Done
-2023-09-05 17:28:17,556 - INFO - Result: None
-2023-09-05 17:28:17,556 - INFO - @A_HCPU-MemoryUnit.run
-2023-09-05 17:28:18,560 - INFO - @A_HCPU-MemoryUnit.run: Done
-2023-09-05 17:28:18,560 - INFO - RAM: None
-2023-09-05 17:28:18,560 - INFO - @A_HCPU.run: Done
-2023-09-05 17:28:18,560 - INFO - @A_HCPU.execute: Ending run #1 at 1693952898.560514
-2023-09-05 17:28:18,560 - INFO - Cycle Duration: 3.0135068893432617
-2023-09-05 17:28:18,560 - INFO - @A_HCPU.execute: Starting run #2 at 1693952898.5606852
-2023-09-05 17:28:18,560 - INFO - ControlUnit state before run: idle
-2023-09-05 17:28:18,560 - INFO - @A_HCPU.run:
-2023-09-05 17:28:18,560 - INFO - @A_HCPU-ControlUnit.run
-2023-09-05 17:28:19,564 - INFO - @A_HCPU-ControlUnit.run: Done
-2023-09-05 17:28:19,565 - INFO - Instruction: None
-2023-09-05 17:28:19,565 - INFO - Program: None
-2023-09-05 17:28:19,565 - INFO - Memory: None
-2023-09-05 17:28:19,565 - INFO - @A_HCPU-ExecutionUnit.run
-2023-09-05 17:28:20,570 - INFO - @A_HCPU-ExecutionUnit.run: Done
-2023-09-05 17:28:20,570 - INFO - Result: None
-2023-09-05 17:28:20,570 - INFO - @A_HCPU-MemoryUnit.run
-2023-09-05 17:28:21,571 - INFO - @A_HCPU-MemoryUnit.run: Done
-2023-09-05 17:28:21,571 - INFO - RAM: None
-2023-09-05 17:28:21,571 - INFO - @A_HCPU.run: Done
-2023-09-05 17:28:21,571 - INFO - @A_HCPU.execute: Ending run #2 at 1693952901.571728
-2023-09-05 17:28:21,571 - INFO - Cycle Duration: 3.011042833328247
-2023-09-05 17:28:21,571 - INFO - @A_HCPU.execute: Starting run #3 at 1693952901.571872
-2023-09-05 17:28:21,571 - INFO - ControlUnit state before run: idle
-2023-09-05 17:28:21,572 - INFO - @A_HCPU.run:
-2023-09-05 17:28:21,572 - INFO - @A_HCPU-ControlUnit.run
-2023-09-05 17:28:22,572 - INFO - @A_HCPU-ControlUnit.run: Done
-2023-09-05 17:28:22,572 - INFO - Instruction: None
-2023-09-05 17:28:22,572 - INFO - Program: None
-2023-09-05 17:28:22,572 - INFO - Memory: None
-2023-09-05 17:28:22,572 - INFO - @A_HCPU-ExecutionUnit.run
-2023-09-05 17:28:23,577 - INFO - @A_HCPU-ExecutionUnit.run: Done
-2023-09-05 17:28:23,577 - INFO - Result: None
-2023-09-05 17:28:23,577 - INFO - @A_HCPU-MemoryUnit.run
+2023-09-11 09:34:58,353 - INFO - @A_HCPU.execute: Starting run #1 at 1694442898.353524
+2023-09-11 09:34:58,353 - INFO - ControlUnit state before run: idle
+2023-09-11 09:34:58,353 - INFO - @A_HCPU.run:
+2023-09-11 09:34:58,353 - INFO - @A_HCPU-ControlUnit.run
+2023-09-11 09:34:58,353 - INFO - Task Queue is empty. Starting creative task generation
+2023-09-11 09:34:58,354 - INFO - Running command: python3.10 programs/llm_repo_feedback_V0.py --prompt='
+        Help me draft a new Task
+
+        Here is an example of a task:
+        {
+            "task_name": {
+                "task_description": "Task 1", "type": "EXECUTE.PY", "program": "llm_repo_feedback", "memory": "{"args": "--prompt "Help me draft a new Task"" }} 
+        }
+
+        Now pick a something to do at random, and then write a task for it.
+
+        RESPOND WITH ONLY THE JSON OF THE TASK
+
+        '
+2023-09-11 09:35:32,670 - INFO - Output: repo_path: /Library/Github/RI-HEVNAA
+Found 40 python documents.
+Found 5 markdown documents.
+Found 7 log documents.
+Can you assist me in drafting a new task? Here's an example for your reference: 
+        {
+            "task_name": {
+                "task_description": "Task 1", "type": "EXECUTE.PY", "program": "llm_repo_feedback", "memory": "{"args": "--prompt "Help me draft a new Task"" }} 
+        }
+Please choose an activity at random and then write a task for it. Remember, your response should only include the JSON of the task.{
+    "random_task": {
+        "task_description": "Random Task", "type": "EXECUTE.PY", "program": "llm_repo_feedback", "memory": "{"args": "--prompt \"Execute random task\""}" 
+    }
+}The human asks the AI to help draft a new task, providing an example of a JSON task format. The AI responds with a JSON for a random task to be executed.{
+    "random_task": {
+        "task_description": "Random Task", "type": "EXECUTE.PY", "program": "llm_repo_feedback", "memory": "{"args": "--prompt \"Execute random task\""}" 
+    }
+}
+

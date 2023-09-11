@@ -5,7 +5,7 @@ import sys
 import os
 import time
 import numpy as np
-from RIHEVNAA import RIHEVNAA
+from RIHEVNAA.RIHEVNAA import RIHEVNAA
 import argparse
 
 parser = argparse.ArgumentParser(description='RI-HEVNAA')
